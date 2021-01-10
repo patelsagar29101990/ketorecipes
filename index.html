@@ -39,7 +39,7 @@ function myFunction(name,email) {
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./assets/css/site.css" rel="stylesheet">
 </head>
-<form action=main_page.html method="post">
+<form action=main_page.html onsubmit = "return postToGoogle()"; method="post">
 <body>
 
 <div class="cover-get-diet">
@@ -56,7 +56,7 @@ function myFunction(name,email) {
 	<label for="fname">Name :</label>
 	<input type="text" id="fname" name="fname" required><br><br>
 	<label for="lname">Email :</label>
-	<input type="email" id="Email" name="entry.1950313219" required><br><br>
+	<input type="email" id="emailField" name="entry.1950313219" required><br><br>
 </div>
 
 <div class="text-center">
@@ -100,6 +100,32 @@ function myFunction(name,email) {
 <script src="assets/jquery.js" type="text/javascript"></script>
 <script src="assets/yii.js" type="text/javascript"></script>
 <script src="assets/bootstrap.js" type="text/javascript"></script>
+<script>
+	function postToGoogle() {
+            var field1 = $("#emailField").val();
 
+
+            if (field1 == "") {
+                alert('Please Fill Your Email');
+                document.getElementById("emailField").focus();
+                return false;
+            }	
+	$.ajax({
+                url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
+                data: { "entry.1950313219": field1 },
+                type: "POST",
+                dataType: "xml",
+                success: function (d) {
+                },
+                error: function (x, y, z) {
+
+                    window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
+                    document.getElementById('emailField').value = ''
+
+                }
+            });
+            return false;
+        }
+</script>
 
 </body></form></html>
