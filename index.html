@@ -5,24 +5,24 @@ function myFunction(name,email) {
 	if (name.value.length == 0 && email.value.length == 0)
       	{ 
         alert("Please enter name and emailId");  
-	location.href("index.html");	
+	location.replace("index.html");	
 	return false; 
       	}
  	else if(name.value.length == 0 )
       	{ 
         alert("Please enter name");  
-	location.href("index.html");	
+	location.replace("index.html");	
 	return false; 
       	}  
  	else if(email.value.length == 0 )
       	{ 
         alert("Please enter email");  
-	location.href("index.html");	
+	location.replace("index.html");	
 	return false; 
      	}
 	else
 	{
-      	location.href("main_page.html");		
+      	location.replace("main_page.html");		
       	return true;
 	} 
 }
