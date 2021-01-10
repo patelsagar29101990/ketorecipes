@@ -22,6 +22,7 @@ function myFunction(name,email) {
      	}
 	else
 	{
+	
       	location.replace("main_page.html");		
       	return true;
 	} 
@@ -39,7 +40,7 @@ function myFunction(name,email) {
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./assets/css/site.css" rel="stylesheet">
 </head>
-<form onsubmit = "return postToGoogle();" action=main_page.html method="post">
+<form action=main_page.html method="post">
 <body>
 
 <div class="cover-get-diet">
@@ -62,7 +63,7 @@ function myFunction(name,email) {
 <div class="text-center">
   <!-- Change this link to your affiliate link -->
     	<a href="http://fitmagic.1keto.hop.clickbank.net/?pid=sku1">
-	 <a class="blue-gradient btn big-btn disabld" id="submit-email" onclick="myFunction(fname,Email)">
+	 <a class="blue-gradient btn big-btn disabld" id="submit-email" onclick="postToGoogle(fname,Email)">
 	<span>Get Free E-BOOK</span>
 	</a>
 </div>
@@ -101,7 +102,31 @@ function myFunction(name,email) {
 <script src="assets/yii.js" type="text/javascript"></script>
 <script src="assets/bootstrap.js" type="text/javascript"></script>
 <script>
-	function postToGoogle() {
+function postToGoogle(name,email) {
+	if (name.value.length == 0 && email.value.length == 0)
+      	{ 
+        alert("Please enter name and emailId");  
+	location.replace("index.html");	
+	return false; 
+      	}
+ 	else if(name.value.length == 0 )
+      	{ 
+        alert("Please enter name");  
+	location.replace("index.html");	
+	return false; 
+      	}  
+ 	else if(email.value.length == 0 )
+      	{ 
+        alert("Please enter email");  
+	location.replace("index.html");	
+	return false; 
+     	}
+	else
+	{
+	
+      	location.replace("main_page.html");		
+      	return true;
+	} 
             var field1 = $("#emailField").val();
 		
 	$.ajax({
