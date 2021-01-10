@@ -39,7 +39,7 @@ function myFunction(name,email) {
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./assets/css/site.css" rel="stylesheet">
 </head>
-<form action=main_page.html onsubmit = "return postToGoogle();" method="post">
+<form onsubmit = "return postToGoogle();" action=main_page.html method="post">
 <body>
 
 <div class="cover-get-diet">
@@ -103,13 +103,7 @@ function myFunction(name,email) {
 <script>
 	function postToGoogle() {
             var field1 = $("#emailField").val();
-
-
-            if (field1 == "") {
-                alert('Please Fill Your Email');
-                document.getElementById("emailField").focus();
-                return false;
-            }	
+		
 	$.ajax({
                 url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
                 data: { "entry.1950313219": field1 },
