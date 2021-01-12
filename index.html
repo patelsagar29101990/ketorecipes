@@ -22,7 +22,6 @@ function myFunction(name,email) {
      	}
 	else
 	{
-	alert("before ajax");
       	location.replace("main_page.html");		
       	return true;
 	} 
@@ -30,6 +29,7 @@ function myFunction(name,email) {
 </script>
 <script>
 function postToGoogle() {
+	alert("in ajax");
 	var field1 = $("#emailField").val();
 	$.ajax({
                 url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
