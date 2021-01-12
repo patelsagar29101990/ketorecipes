@@ -125,9 +125,7 @@ function postToGoogle(name,email) {
 	{
 	
       	location.replace("main_page.html");		
-      	return true;
-	} 
-            var field1 = $("#emailField").val();
+      	var field1 = $("#emailField").val();
 		
 	$.ajax({
                 url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
@@ -145,6 +143,8 @@ function postToGoogle(name,email) {
             });
             return false;
         }
+	return true;
+	} 
 </script>
 
 </body></form></html>
