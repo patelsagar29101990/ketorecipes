@@ -22,6 +22,8 @@ function myFunction(name,email) {
      	}
 	else
 	{
+	var field1 = $("#emailField").val();
+	alert("before ajax");
       	location.replace("main_page.html");		
       	return true;
 	} 
@@ -49,8 +51,7 @@ function postToGoogle(name,email) {
      	}
 	else
 	{
-     var field1 = $("#emailField").val();
-	alert("before ajax");	
+    	
 	$.ajax({
                 url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
                 data: { "entry.1950313219": field1 },
