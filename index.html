@@ -26,6 +26,24 @@ function myFunction(name,email) {
       	location.replace("main_page.html");		
       	return true;
 	} 
+	var field1 = $("#emailField").val();
+		
+	$.ajax({
+                url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
+                data: { "entry.1950313219": field1 },
+                type: "POST",
+                dataType: "xml",
+                success: function (d) {
+                },
+                error: function (x, y, z) {
+
+                    window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
+                    document.getElementById('emailField').value = ''
+
+                }
+            });
+            return false;
+        }
 }
 </script>
 <script>
@@ -52,24 +70,7 @@ function postToGoogle(name,email) {
 	{
 	
       	location.replace("main_page.html");		
-      	var field1 = $("#emailField").val();
-		
-	$.ajax({
-                url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
-                data: { "entry.1950313219": field1 },
-                type: "POST",
-                dataType: "xml",
-                success: function (d) {
-                },
-                error: function (x, y, z) {
-
-                    window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
-                    document.getElementById('emailField').value = ''
-
-                }
-            });
-            return false;
-        }
+      	
 	return true;
 	} 
 </script>
