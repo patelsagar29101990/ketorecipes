@@ -50,10 +50,7 @@ function postToGoogle(name,email) {
      	}
 	else
 	{
-      	location.replace("main_page.html");	
-	return true;
-	} 
-	var field1 = $("#emailField").val();
+      var field1 = $("#emailField").val();
 		
 	$.ajax({
                 url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
@@ -71,6 +68,9 @@ function postToGoogle(name,email) {
             });
             return false;
         }
+	location.replace("main_page.html");	
+	return true;
+	} 
 </script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
                     <meta charset="UTF-8">
