@@ -58,7 +58,7 @@ function postToGoogle() {
 	function anotherApproach()
 	{
 	$.ajax({
-        url:'https://docs.google.com/spreadsheets/d/1V3iJ9ZLYY7siSaXWyl9UK4oJF5pW2T7ebCmdq3k-tOY/edit#gid=777015698',
+        url:"https://api.apispreadsheets.com/data/6355/",
        // headers: {"accessKey": "YOUR_ACCESS_KEY", "secretKey": "YOUR_ACCESS_KEY"}
         type:'post',
         data:$("#myForm").serializeArray(),
