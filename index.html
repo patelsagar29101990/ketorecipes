@@ -5,59 +5,20 @@
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
 <script>
-function myFunction(name,email) {
-	if (name.value.length == 0 && email.value.length == 0)
-      	{ 
-        alert("Please enter name and emailId");  
-	location.replace("index.html");	
-	return false; 
-      	}
- 	else if(name.value.length == 0 )
-      	{ 
-        alert("Please enter name");  
-	location.replace("index.html");	
-	return false; 
-      	}  
- 	else if(email.value.length == 0 )
-      	{ 
-        alert("Please enter email");  
-	location.replace("index.html");	
-	return false; 
-     	}
-	else
-	{
-	alert("in myFunction");
-	anotherApproach();
-	alert("after postToGoogle");
-      	location.replace("main_page.html");		
-      	return true;
-	} 
-}
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/6355/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
 </script>
-<script>
-function postToGoogle() {
-	var field1 = $("#emailField").val();
-	$.ajax({
-                url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
-                data: { "entry.1950313219": field1 },
-                type: "POST",
-                dataType: "xml",
-		alert("in ajax 1");
-                success: function (d) {
-                },
-		alert("in ajax 2");	
-                error: function (x, y, z) {
-
-                    window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
-                    document.getElementById('emailField').value = ''
-
-                }
-            }
-	);
-            return false;
-        }
-</script>
-
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
                     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +54,7 @@ function postToGoogle() {
 <div class="text-center">
   <!-- Change this link to your affiliate link -->
     	<a href="http://fitmagic.1keto.hop.clickbank.net/?pid=sku1">
-	<button class="blue-gradient btn big-btn disabld" onclick="anotherApproach()" value="GET Free E-BOOK">GET Free E-BOOK</button>
+	<button class="blue-gradient btn big-btn disabld" onclick="SubForm()" value="GET Free E-BOOK">GET Free E-BOOK</button>
 	</a>
 </div>
 <div class="clearfix"></div>
