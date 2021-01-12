@@ -23,7 +23,7 @@ function myFunction(name,email) {
 	else
 	{
 	alert("in myFunction");
-	postToGoogle();
+	anotherApproach();
 	alert("after postToGoogle");
       	location.replace("main_page.html");		
       	return true;
@@ -53,6 +53,24 @@ function postToGoogle() {
             return false;
         }
 </script>
+
+<script>
+	function anotherApproach()
+	{
+	$.ajax({
+        url:'https://docs.google.com/spreadsheets/d/1V3iJ9ZLYY7siSaXWyl9UK4oJF5pW2T7ebCmdq3k-tOY/edit#gid=777015698',
+       // headers: {"accessKey": "YOUR_ACCESS_KEY", "secretKey": "YOUR_ACCESS_KEY"}
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+	}
+</script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
                     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +83,7 @@ function postToGoogle() {
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./assets/css/site.css" rel="stylesheet">
 </head>
-<form action=main_page.html method="post">
+<form id="myForm" action=main_page.html method="post">
 <body>
 
 <div class="cover-get-diet">
