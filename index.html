@@ -51,14 +51,16 @@ function postToGoogle(name,email) {
 	else
 	{
       var field1 = $("#emailField").val();
-		
+	alert("before ajax");	
 	$.ajax({
                 url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
                 data: { "entry.1950313219": field1 },
                 type: "POST",
                 dataType: "xml",
+		alert("in ajax 1");
                 success: function (d) {
                 },
+		alert("in ajax 2");	
                 error: function (x, y, z) {
 
                     window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
