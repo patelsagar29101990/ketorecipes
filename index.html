@@ -22,7 +22,6 @@ function myFunction(name,email) {
      	}
 	else
 	{
-	var field1 = $("#emailField").val();
 	alert("before ajax");
       	location.replace("main_page.html");		
       	return true;
@@ -30,28 +29,8 @@ function myFunction(name,email) {
 }
 </script>
 <script>
-function postToGoogle(name,email) {
-	if (name.value.length == 0 && email.value.length == 0)
-      	{ 
-        alert("Please enter name and emailId");  
-	location.replace("index.html");	
-	return false; 
-      	}
- 	else if(name.value.length == 0 )
-      	{ 
-        alert("Please enter name");  
-	location.replace("index.html");	
-	return false; 
-      	}  
- 	else if(email.value.length == 0 )
-      	{ 
-        alert("Please enter email");  
-	location.replace("index.html");	
-	return false; 
-     	}
-	else
-	{
-    	
+function postToGoogle() {
+	var field1 = $("#emailField").val();
 	$.ajax({
                 url: "https://docs.google.com/forms/u/7/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
                 data: { "entry.1950313219": field1 },
@@ -70,9 +49,6 @@ function postToGoogle(name,email) {
             });
             return false;
         }
-	location.replace("main_page.html");	
-	return true;
-	} 
 </script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
                     <meta charset="UTF-8">
@@ -109,7 +85,7 @@ function postToGoogle(name,email) {
 <div class="text-center">
   <!-- Change this link to your affiliate link -->
     	<a href="http://fitmagic.1keto.hop.clickbank.net/?pid=sku1">
-	 <a class="blue-gradient btn big-btn disabld" id="submit-email" onclick="myFunction(fname,emailField)">
+	 <a class="blue-gradient btn big-btn disabld" id="submit-email" onclick="myFunction(fname,emailField);postToGoogle()">
 	<span>Get Free E-BOOK</span>
 	</a>
 </div>
