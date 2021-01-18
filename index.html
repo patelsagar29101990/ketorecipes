@@ -19,7 +19,7 @@
             // change url and data
 
             $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse",
+                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse",
                 data: { "entry.1950313219": $("#emailField").val() },
                 type: "POST",
                 dataType: "xml",
@@ -47,7 +47,7 @@
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./assets/css/site.css" rel="stylesheet">
 </head>
-<form id="myForm" action="main_page.html">
+<form action="main_page.html" target="_self" method="POST">
 <body>
 
 <div class="cover-get-diet">
