@@ -4,9 +4,9 @@
 <script>
         function postToGoogle() {
 		alert('above the function');
-            var field1 = $("#emailField").val();
+           // var field1 = $("#emailField").val();
 	    alert('in the function');
-/*
+
             if (field1 == "") {
                 alert('Please Fill Your Email');
                 document.getElementById("emailField").focus();
@@ -20,7 +20,7 @@
 
             $.ajax({
                 url: "https://docs.google.com/forms/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
-                data: { "entry.1950313219": field1 },
+                data: { "entry.1950313219": $("#emailField").val() },
                 type: "POST",
                 dataType: "xml",
                 success: function (d) {
@@ -33,7 +33,7 @@
                 }
             });
             return false;
-        }*/
+        }
     </script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
                     <meta charset="UTF-8">
