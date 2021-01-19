@@ -89,8 +89,7 @@
                 data: { "entry.1950313219": field1 },
                 type: "POST",
                 dataType: "xml",
-		location.replace("main_page.html");
-                success: function (d) {
+		success: function (d) {
 			alert("in success");
                 },
                 error: function (x, y, z) {
@@ -104,6 +103,7 @@
             //return false;
         }
 	alert("after false");
+	location.replace("main_page.html");
     </script>
 </body>
 </html>
