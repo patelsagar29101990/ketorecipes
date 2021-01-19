@@ -87,6 +87,7 @@
             // change url and data
 
             $.ajax({
+		    alert("before success");
                 url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
                 data: { "entry.1950313219": field1 },
                 type: "POST",
