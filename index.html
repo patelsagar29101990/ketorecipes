@@ -14,7 +14,7 @@
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./assets/css/site.css" rel="stylesheet">
 </head>
-<form action="/main_page.html" method="POST">
+<form action="/main_page.html"  onsubmit="return direction()" method="POST">
 <body>
 
 <div class="cover-get-diet">
@@ -68,6 +68,11 @@
 
 	
 </body>
+	<script>
+		function direction(){
+		location.replace("main_page.html");
+		}
+	</script>
 <script>
         function postToGoogle() {
 		//alert('above the function');
