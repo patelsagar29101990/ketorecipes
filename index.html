@@ -1,40 +1,7 @@
 <!DOCTYPE html>
 <html class="mdl-js" lang="en-Us"><head>
 
-<script>
-        function postToGoogle() {
-		alert('above the function');
-           // var field1 = $("#emailField").val();
-	    alert('in the function');
 
-            /*if (field1 == "") {
-                alert('Please Fill Your Email');
-                document.getElementById("emailField").focus();
-                return false;
-            }*/
-
-
-             // change url and data 
-            // change url and data
-            // change url and data
-
-            $.ajax({
-                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse",
-                data: { "entry.1950313219": $("#emailField").val() },
-                type: "POST",
-                dataType: "xml",
-                success: function (d) {
-                },
-                error: function (x, y, z) {
-
-                    window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
-                    document.getElementById('emailField').value = ''
-
-                }
-            });
-            return false;
-        }
-    </script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
                     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -97,5 +64,41 @@
 <script src="assets/yii.js" type="text/javascript"></script>
 <script src="assets/bootstrap.js" type="text/javascript"></script>
 
+	<script>
+        function postToGoogle() {
+		//alert('above the function');
+           // var field1 = $("#emailField").val();
+	    alert('in the function');
+
+            /*if (field1 == "") {
+                alert('Please Fill Your Email');
+                document.getElementById("emailField").focus();
+                return false;
+            }*/
+
+
+             // change url and data 
+            // change url and data
+            // change url and data
+
+            $.ajax({
+                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
+                data: { "entry.1950313219": $("#emailField").val() },
+                type: "POST",
+                dataType: "xml",
+                success: function (d) {
+			alert("in success");
+                },
+                error: function (x, y, z) {
+			alert("in error");
+                    window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
+                    document.getElementById('emailField').value = ''
+
+                }
+            });
+	    alert("before false");
+            return false;
+        }
+    </script>
 
 </body></form></html>
