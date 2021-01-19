@@ -87,23 +87,22 @@
             // change url and data
 
             $.ajax({
-		    alert("before success");
-                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
+		url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
                 data: { "entry.1950313219": field1 },
                 type: "POST",
                 dataType: "xml",
 		success: function (d) {
-			alert("in success");
                 },
                 error: function (x, y, z) {
-			alert("in error");
                     window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
                     document.getElementById('emailField').value = ''
 
                 }
             });
-	    alert("before false");
-            //return false;
+		$(document).ajaxSuccess(function(){
+		  alert("AJAX request successfully completed");
+			});
+            return false;
         }
 	alert("after false");
 	
