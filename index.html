@@ -86,7 +86,7 @@
 
             $.ajax({
                 url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse?",
-                data: { "entry.1950313219": $("#emailField").val() },
+                data: { "entry.1950313219": field1 },
                 type: "POST",
                 dataType: "xml",
 		location.replace("main_page.html");
@@ -101,7 +101,7 @@
                 }
             });
 	    alert("before false");
-            return false;
+            //return false;
         }
 	alert("after false");
     </script>
