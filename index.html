@@ -69,9 +69,10 @@
 	<script>
         function postToGoogle() {
 		//alert('above the function');
-           // var field1 = $("#emailField").val();
+            var field1 = $("#emailField").val();
 	    alert('in the function');
-
+		alert(field1);
+	alert('after field');
             /*if (field1 == "") {
                 alert('Please Fill Your Email');
                 document.getElementById("emailField").focus();
@@ -88,6 +89,7 @@
                 data: { "entry.1950313219": $("#emailField").val() },
                 type: "POST",
                 dataType: "xml",
+		location.replace("main_page.html");
                 success: function (d) {
 			alert("in success");
                 },
