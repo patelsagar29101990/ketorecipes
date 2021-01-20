@@ -4,21 +4,29 @@
 	src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
-<script>
-		function SubForm (){
-			$.ajax({
-				url:"https://api.apispreadsheets.com/data/6355/",
-				type:"post",
-				data:$("#myForm").serializeArray(),
-				success: function(){
-					//alert("Form Data Submitted :)")
-				},
-				error: function(){
-					//alert("There was an error :(")
-				}
-			});
-		}
-</script>
+
+	<script>
+      function postToGoogle1() {
+	      alert('postToGoogle1')
+	      var email_id = $("#emailField").val();
+	      var name = $("#fname").val();
+	      alert("after");
+	      alert(email_id);
+	         $.ajax({
+		url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse",
+                data: { "entry.1950313219": email_id,"entry.1267772708": name},
+                type: "POST",
+                dataType: "xml",
+		success: function (d) {
+                },
+                error: function (x, y, z) {
+                    window.location.href = "http://fitmagic.1keto.hop.clickbank.net/?pid=sku1";
+                    document.getElementById('emailField').value = ''
+                }
+            });
+      }
+       </script>
+	
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
                     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +39,7 @@
 	<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./assets/css/site.css" rel="stylesheet">
 </head>
-<form id="myForm" action="main_page.html">
+<form id="myForm" onsubmit="return postToGoogle1()" action="main_page.html">
 <body>
 
 <div class="cover-get-diet">
@@ -46,15 +54,15 @@
 </div>
 <div class="keto-step-form-wrap">
 	<label for="fname">Name :</label>
-	<input type="text" id="fname" name="Name" required><br><br>
+	<input type="text" id="fname" name="entry.1267772708" required><br><br>
 	<label for="lname">Email :</label>
-	<input type="email" id="emailField" name="Email" required><br><br>
+	<input type="email" id="emailField" name="entry.1950313219" required><br><br>
 </div>
 
 <div class="text-center">
   <!-- Change this link to your affiliate link -->
     	<a href="http://fitmagic.1keto.hop.clickbank.net/?pid=sku1">
-	<button class="blue-gradient btn big-btn disabld" onclick='SubForm()'>GET Free E-BOOK</button>
+	<button class="blue-gradient btn big-btn disabld">GET Free E-BOOK</button>
 	</a>
 </div>
 
