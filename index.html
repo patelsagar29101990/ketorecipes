@@ -7,12 +7,9 @@
 
 	<script>
       function postToGoogle1() {
-	      alert('postToGoogle1')
 	      var email_id = $("#emailField").val();
 	      var name = $("#fname").val();
-	      alert("after");
-	      alert(email_id);
-	         $.ajax({
+	      $.ajax({
 		url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScXih-Hcfwdrse_ilCxn79nX5XVgGsytcBENG-mmqIOq7cxOA/formResponse",
                 data: { "entry.1950313219": email_id,"entry.1267772708": name},
                 type: "POST",
